@@ -5,6 +5,6 @@ gem_group :development, :test do
 end
 
 run "bundle install"
-rails_command "generate rspec:install"
+generate rspec:install
 
 run "rm -rf test"
