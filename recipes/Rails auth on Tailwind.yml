@@ -1,0 +1,16 @@
+---
+:name: Rails auth on Tailwind
+:description: Add built-in Rails authentication + nicer forms with Tailwind
+:cli_flags: "   -c tailwind "
+:rails_version: 8.0.1
+:ruby_version: 3.4.1
+:ingredients:
+- :name: Built-in Rails Authentication
+  :position: 1
+  :configuration: {}
+- :name: Tailwind Form Plugin
+  :position: 2
+  :configuration: {}
+- :name: Built-in Rails Auth Beautifier
+  :position: 3
+  :configuration: {}
