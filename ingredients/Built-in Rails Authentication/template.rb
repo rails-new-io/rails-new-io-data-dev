@@ -1,1 +1,1 @@
-generate "authentication"
+generate 'authentication'
