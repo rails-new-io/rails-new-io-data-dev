@@ -1,4 +1,4 @@
-def beef_up_sessions_new(file_path)
+def beef_up_session_new(file_path)
   prepend_to_file file_path, <<~SNIPPET_1
   <div class="flex flex-col items-center justify-center h-full">
   <h1 class="bg-white py-px px-2 -mx-2 uppercase font-bold text-2xl">Sign in</h1>
@@ -44,6 +44,6 @@ SNIPPET_4
 
 end
 
-beef_up_sessions_new('app/views/sessions/new.html.erb')
+beef_up_session_new('app/views/session/new.html.erb')
 add_form_builder_views_to_tailwind_config('tailwind.config.js')
 create_tailwind_authentication_form_builder('app/form_builders', 'tailwind_authentication.rb')
