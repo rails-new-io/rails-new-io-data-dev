@@ -1,3 +1,6 @@
+empty_directory "app/form_builders"
+
+create_file "app/form_builders/tailwind_authentication.rb", <<~SNIPPET_1
     class TailwindAuthentication < ActionView::Helpers::FormBuilder
       FORM_STYLE = "mt-10 sm:mx-auto sm:w-full sm:max-w-sm space-y-4"
       TEXT_FIELD_STYLE = "w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -18,4 +21,5 @@
       def submit(value = nil, options = {})
         super(value, options.merge({class: SUBMIT_STYLE}))
       end
-    end      
+    end
+SNIPPET_1
