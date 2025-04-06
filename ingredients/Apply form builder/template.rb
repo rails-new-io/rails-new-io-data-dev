@@ -12,3 +12,6 @@ append_to_file 'app/views/sessions/new.html.erb', <<~SNIPPET_4
   </div>
 </div>
 SNIPPET_4
+
+
+gsub_file "<%= link_to "Forgot password?", new_password_path %>", ''
