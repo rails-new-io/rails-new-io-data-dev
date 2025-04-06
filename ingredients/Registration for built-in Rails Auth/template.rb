@@ -3,9 +3,9 @@ def create_registrations_controller
 
   inject_into_file 'app/controllers/registrations_controller.rb', 
     after: "class RegistrationsController < ApplicationController\n", 
-    <<~SNIPPET_1
-class RegistrationsController < ApplicationController
+    content: <<~SNIPPET_1
   allow_unauthenticated_access only: [ :new, :create ]
+
   def new
     @user = User.new
   end
@@ -25,8 +25,6 @@ class RegistrationsController < ApplicationController
   def user_params
     params.require(:user).permit(:email_address, :password, :password_confirmation)
   end
-end
-
 SNIPPET_1
 
 end
@@ -85,7 +83,7 @@ end
 def add_user_validations
   inject_into_file 'app/models/user.rb',
     after: "normalizes :email_address, with: -> e { e.strip.downcase }\n",
-    "validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }"
+    content: "  validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }"
 end
 
 
