@@ -1,7 +1,8 @@
 def create_registrations_controller
   generate :controller, 'Registrations'
 
-  inject_into_file 'app/controllers/registrations_controller.rb', after: "class RegistrationsController < ApplicationController\n" do
+  inject_into_file 'app/controllers/registrations_controller.rb', 
+    after: "class RegistrationsController < ApplicationController\n", 
     <<~SNIPPET_1
 class RegistrationsController < ApplicationController
   allow_unauthenticated_access only: [ :new, :create ]
@@ -28,7 +29,6 @@ end
 
 SNIPPET_1
 
-  end
 end
 
 def add_routes
@@ -82,8 +82,16 @@ SNIPPET_2
 
 end
 
+def add_user_validations
+  inject_into_file 'app/models/user.rb',
+    after: "normalizes :email_address, with: -> e { e.strip.downcase }\n",
+    "validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }"
+  end
+end
+
 
 
 create_registrations_controller
 add_routes
 setup_registration_view
+add_user_validations
