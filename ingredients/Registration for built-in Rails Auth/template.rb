@@ -25,8 +25,7 @@ def create_registrations_controller
     params.require(:user).permit(:email_address, :password, :password_confirmation)
   end
 SNIPPET_1
-,
-    after: "class RegistrationsController < ApplicationController\n"
+, after: "class RegistrationsController < ApplicationController\n"
   end
 end
 
