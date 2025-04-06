@@ -32,7 +32,7 @@ def add_routes
   route('resource :registration, only: [ :new, :create ]')
 end
 
-def setup_registration_view
+def create_sign_up_form
   file 'app/views/registrations/new.html.erb', <<~SNIPPET_2
 <div class="flex flex-col items-center justify-center h-full">
   <h1 class="bg-white mt-10 py-px px-2 -mx-2 uppercase font-bold text-2xl">Sign up</h1>
@@ -85,9 +85,19 @@ def add_user_validations
     after: "normalizes :email_address, with: -> e { e.strip.downcase }\n"
 end
 
+def add_sign_up_link_to_sign_in_form
+  inject_into_file, 'app/views/registrations/new.html.erb',
+  <<~SNIPPET_4,
+    <%= link_to "Sign up", new_registration_path, class: "text-sm text-gray-600" %>
+    <div class="text-gray-600">•</div>
+SNIPPET_4
+before: '<%= link_to "Forgot your password?", new_password_path'
+end
+
 
 
 create_registrations_controller
 add_routes
-setup_registration_view
+create_sign_up_form
 add_user_validations
+add_sign_up_link_to_sign_in_form
