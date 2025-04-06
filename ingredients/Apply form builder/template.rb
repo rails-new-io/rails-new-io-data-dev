@@ -12,7 +12,7 @@ SNIPPET_1
 </div>
 SNIPPET_4
 
-  gsub_file 'app/views/sessions/new.html.erb', "<%= link_to 'Forgot password?', new_password_path %>", ''
+  gsub_file 'app/views/sessions/new.html.erb', '<%= link_to "Forgot password?", new_password_path %>', ''
   gsub_file 'app/views/sessions/new.html.erb', '<br>',''
 end
 
