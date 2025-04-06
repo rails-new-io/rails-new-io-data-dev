@@ -1,5 +1,5 @@
 prepend_to_file 'app/views/sessions/new.html.erb', <<~SNIPPET_1
-  <div class="flex flex-col items-center justify-center h-full">
+<div class="flex flex-col items-center justify-center h-full">
   <h1 class="bg-white mt-10 py-px px-2 -mx-2 uppercase font-bold text-2xl">Sign in</h1>
 SNIPPET_1
 
