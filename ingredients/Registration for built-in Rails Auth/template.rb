@@ -2,7 +2,7 @@ def create_registrations_controller
   generate :controller, 'Registrations'
 
   inject_into_file 'app/controllers/registrations_controller.rb',
-    <<~SNIPPET_1
+    <<~SNIPPET_1,
   allow_unauthenticated_access only: [ :new, :create ]
 
   def new
@@ -25,7 +25,7 @@ def create_registrations_controller
     params.require(:user).permit(:email_address, :password, :password_confirmation)
   end
 SNIPPET_1
-, after: "class RegistrationsController < ApplicationController\n"
+after: "class RegistrationsController < ApplicationController\n"
 end
 
 def add_routes
