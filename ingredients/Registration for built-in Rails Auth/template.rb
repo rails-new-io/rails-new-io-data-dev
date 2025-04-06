@@ -86,7 +86,6 @@ def add_user_validations
   inject_into_file 'app/models/user.rb',
     after: "normalizes :email_address, with: -> e { e.strip.downcase }\n",
     "validates :email_address, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }"
-  end
 end
 
 
