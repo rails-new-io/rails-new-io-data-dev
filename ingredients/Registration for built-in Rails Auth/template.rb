@@ -26,7 +26,6 @@ def create_registrations_controller
   end
 SNIPPET_1
 , after: "class RegistrationsController < ApplicationController\n"
-  end
 end
 
 def add_routes
