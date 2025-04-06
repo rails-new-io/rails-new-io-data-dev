@@ -13,7 +13,7 @@ SNIPPET_1
 SNIPPET_4
 
   gsub_file 'app/views/sessions/new.html.erb', "<%= link_to 'Forgot password?', new_password_path %>", ''
-  gsub_file, 'app/views/sessions/new.html.erb', '<br>',''
+  gsub_file 'app/views/sessions/new.html.erb', '<br>',''
 end
 
 def update_forgot_your_password
