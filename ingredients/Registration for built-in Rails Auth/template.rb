@@ -86,7 +86,7 @@ def add_user_validations
 end
 
 def add_sign_up_link_to_sign_in_form
-  inject_into_file, 'app/views/registrations/new.html.erb',
+  inject_into_file 'app/views/registrations/new.html.erb',
   <<~SNIPPET_4,
     <%= link_to "Sign up", new_registration_path, class: "text-sm text-gray-600" %>
     <div class="text-gray-600">•</div>
