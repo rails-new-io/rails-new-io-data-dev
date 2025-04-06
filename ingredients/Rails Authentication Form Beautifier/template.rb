@@ -12,14 +12,16 @@ class TailwindAuthentication < ActionView::Helpers::FormBuilder
     super
   end
 
-  def email_field(method, options={})
-    super(method, options.merge({class: TEXT_FIELD_STYLE}))
+  def email_field(method, options = {})
+    super(method, options.merge({ class: TEXT_FIELD_STYLE }))
   end
 
-  alias_method :password_field, :email_field
+  def password_field(method, options = {})
+    super(method, options.merge({ class: TEXT_FIELD_STYLE }))
+  end
 
   def submit(value = nil, options = {})
-    super(value, options.merge({class: SUBMIT_STYLE}))
+    super(value, options.merge({ class: SUBMIT_STYLE }))
   end
 end
 SNIPPET_1
