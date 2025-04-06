@@ -6,4 +6,9 @@ SNIPPET_1
 
 gsub_file 'app/views/sessions/new.html.erb', "<%= form_with url: session_path do |form| %>", "<%= form_with url: session_path, :builder => TailwindAuthentication do |form| %>"
 
-append_to_file 'app/views/sessions/new.html.erb', "</div>\n"
+append_to_file 'app/views/sessions/new.html.erb', <<~SNIPPET_4
+  <div class="text-sm text-gray-600 flex items-center gap-2">
+    <%= link_to "Forgot your password?", new_password_path %>
+  </div>
+</div>
+SNIPPET_4
