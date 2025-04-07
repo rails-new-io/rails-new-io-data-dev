@@ -1,7 +1,8 @@
-generate :controller, 'Home', 'index', '--skip-routes', '--skip-views'
+generate :controller, 'Home', 'index', '--skip-routes', '--skip-template-engine'
 
 route('root to: "home#index"')
 
+directory 'app/views/home'
 file 'app/views/home/index.html.erb', <<~SNIPPET_1
 <div class="flex flex-col items-center justify-center h-screen gap-4">
   <h1 class="text-primary text-4xl font-bold">There's no place like 127.0.0.1:3000</h1>
