@@ -1,4 +1,4 @@
-generate :controller, 'Home', 'index', '--skip-routes'
+generate :controller, 'Home', 'index', '--skip-routes', '--skip-views'
 
 route('root to: "home#index"')
 
