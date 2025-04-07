@@ -1,6 +1,6 @@
 generate :controller, 'Home'
 
-route('resource :home, only: [ :index ]')
+route('root to: "home#index"')
 
 file 'app/views/home/index.html.erb', <<~SNIPPET_1
 <div class="flex flex-col items-center justify-center h-screen gap-4">
