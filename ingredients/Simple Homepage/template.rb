@@ -1,7 +1,4 @@
 generate :controller, 'Home', 'index', '--skip-routes', '--skip-template-engine'
-
-route('root to: "home#index"')
-
 directory 'app/views/home'
 file 'app/views/home/index.html.erb', <<~SNIPPET_1
 <div class="flex flex-col items-center justify-center h-screen gap-4">
@@ -9,3 +6,5 @@ file 'app/views/home/index.html.erb', <<~SNIPPET_1
   <%= button_to "Logout", session_path, method: :delete, class: "px-4 mt-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" %>
 </div>
 SNIPPET_1
+
+route('root to: "home#index"')
